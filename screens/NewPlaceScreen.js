@@ -8,6 +8,7 @@ import * as placesActions from '../store/places-action';
 
 const NewPlaceScreen = props => {
     const [titleValue, setTitleValue] = useState('');
+    
     const dispatch = useDispatch();
 
     const titleChangeHandler = text => {
@@ -41,6 +42,7 @@ NewPlaceScreen.navigationOptions = navData =>{
         headerTitle: 'New Place',
     }
 };
+
 const styles = StyleSheet.create({
     form: {
         margin:30

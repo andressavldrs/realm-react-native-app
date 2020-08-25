@@ -3,12 +3,13 @@ import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import Colors from '../constants/Colors';
 
 const PlaceItem = props => {
+  var RandomNumber = Math.floor(Math.random() * 10) + 1 ;
   return (
     <TouchableOpacity onPress={props.onSelect} style={styles.placeItem}>
-      <Image style={styles.image} source={{ uri: props.image }} />
+      <Image style={styles.image} source={{ uri: `https://picsum.photos/id/${RandomNumber}/200/300` }} />
       <View style={styles.infoContainer}>
         <Text style={styles.title}>{props.title}</Text>
-        <Text style={styles.address}>{props.address}</Text>
+        <Text style={styles.address}>{'endereço'}</Text>
       </View>
     </TouchableOpacity>
   );

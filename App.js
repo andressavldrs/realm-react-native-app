@@ -1,11 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import ReduxThunk from 'redux-thunk';
 
 import PlacesNavigator from './navigation/PlacesNavigation';
 import placesReducer from './store/places-reducer';
-import placesAction from './store/places-action';
 
 const rootReducer = combineReducers({
   places: placesReducer
