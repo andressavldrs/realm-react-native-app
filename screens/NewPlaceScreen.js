@@ -8,6 +8,7 @@ import * as placesActions from '../store/places-action';
 
 const NewPlaceScreen = props => {
     const [titleValue, setTitleValue] = useState('');
+    const [descriptionValue, setDescriptionValue] = useState('');
     
     const dispatch = useDispatch();
 
@@ -16,9 +17,14 @@ const NewPlaceScreen = props => {
         setTitleValue(text);
     }
 
+    const descriptionChangeHandler = text => {
+        //todo add validation
+        setDescriptionValue(text);
+    }
+
 
     const savePlaceHandler = () => {
-        dispatch(placesActions.addPlace(titleValue));
+        dispatch(placesActions.addPlace(titleValue, descriptionValue));
         props.navigation.goBack();
     };
 
@@ -30,6 +36,12 @@ const NewPlaceScreen = props => {
                     style={styles.textInput}
                     onChangeText={titleChangeHandler}
                     value={titleValue}
+                />
+                <Text style={styles.label}>Description</Text>
+                <TextInput 
+                    style={styles.textInput}
+                    onChangeText={descriptionChangeHandler}
+                    value={descriptionValue}
                 /> 
             <Button title="Save place" color={Colors.light.tabIconSelected} onPress={savePlaceHandler}></Button>
             </View>
